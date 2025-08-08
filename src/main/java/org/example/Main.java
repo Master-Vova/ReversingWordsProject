@@ -1,17 +1,17 @@
 package org.example;
 
 import java.util.Scanner;
+
 public class Main {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-            Scanner write = new Scanner(System.in);
+        Scanner write = new Scanner(System.in);
 
-            System.out.println("Type a word and I will check if your word has anagram:");
+        System.out.println("Type a word and we will reverse it:");
 
             String sentence = write.nextLine();
-            String reversedSentence = ReversingWordsService.reverseWords(sentence);
+            String reversedSentence = WordsReverseUtils.reverseSentence(sentence);
 
-            System.out.println(reversedSentence);
-
-        }
+        System.out.println(reversedSentence);
+    }
 }
