@@ -49,9 +49,11 @@ class WordsReverseUtilsTest {
             assertEquals("taehrevo vreser3 gnidliub 3noitid",
                     WordsReverseUtils.reverseSentence("overheat,reserv3...building---3dition"));
         }
-    @Test
-    public void test_nullPassing(){
-        assertThrows(NullPointerException.class, () -> {WordsReverseUtils.reverseSentence(null);
-        });
-    }
+        @Test
+        public void test_nullPassing(){
+            NullPointerException exception = assertThrows(NullPointerException.class, () ->
+            {WordsReverseUtils.reverseSentence(null);
+            });
+            assertEquals("null is not allowed", exception.getMessage());
+        }
 }

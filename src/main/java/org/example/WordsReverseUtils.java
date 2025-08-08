@@ -3,9 +3,7 @@ package org.example;
 public final class WordsReverseUtils {
     private WordsReverseUtils(){}
     public static String reverseSentence(String input) {
-        if (input == null){
-            throw new NullPointerException("null is not allowed");
-        }
+        if (input == null){throw new NullPointerException("null is not allowed");}
 
         input = cleaningInput(input);
         String[] splitWords = input.split(" ");
@@ -42,7 +40,7 @@ public final class WordsReverseUtils {
         return new String(array);
     }
     private static String cleaningInput(String string){
-        string = string.replaceAll(",", " ");
+        string = string.replaceAll("[,.-]", " ");
         string = string.replaceAll("\\s+", " ");
         return string;
     }
