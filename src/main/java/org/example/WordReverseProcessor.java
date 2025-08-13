@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
-public class Main {
+public class WordReverseProcessor {
     public static void main(String[] args) {
 
         Scanner write = new Scanner(System.in);

@@ -1,9 +1,13 @@
 package org.example;
 
 public final class WordsReverseUtils {
-    private WordsReverseUtils(){}
+    private WordsReverseUtils() {
+    }
+
     public static String reverseSentence(String input) {
-        if (input == null){throw new NullPointerException("null is not allowed");}
+        if (input == null) {
+            throw new IllegalArgumentException("input must not be the null");
+        }
 
         input = cleaningInput(input);
         String[] splitWords = input.split(" ");
@@ -12,7 +16,7 @@ public final class WordsReverseUtils {
         for (String word : splitWords) {
             String reversedWord = reverseWord(word);
             System.out.println(reversedWord + " is reversed word of " + word);
-            output =  output.concat(reversedWord) + " ";
+            output = output.concat(reversedWord) + " ";
         }
         return output.strip();
     }
@@ -28,8 +32,8 @@ public final class WordsReverseUtils {
                 ++left;
                 continue;
             } else if (!Character.isLetter(array[right])) {
-                    --right;
-                    continue;
+                --right;
+                continue;
             }
             char temporary = array[left];
             array[left] = array[right];
@@ -39,7 +43,8 @@ public final class WordsReverseUtils {
         }
         return new String(array);
     }
-    private static String cleaningInput(String string){
+
+    private static String cleaningInput(String string) {
         string = string.replaceAll("[,.-]", " ");
         string = string.replaceAll("\\s+", " ");
         return string;
